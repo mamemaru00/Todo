@@ -15,7 +15,10 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
+            $table->string('content')->comment('内容');
+            $table->boolean('check')->comment('チェック状態')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
