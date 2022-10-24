@@ -16,11 +16,15 @@
             Todo App
           </li>
         </ul>
+        <form method="post">
+        @csrf
         <div class="w-3/5 flex mb-10 m-auto">
-            <input type="text" name="hoge" placeholder="TODOを入力する" class="flex-auto w-32 py-2 px-2 rounded-md border-blue-500 hover:border-blue-700 ring-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500" />
-            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer h-10 w-10 ml-5 py-2 shadow-md rounded-md font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
+            <input type="text" name="content" placeholder="TODOを入力する" class="flex-auto w-32 py-2 px-2 rounded-md border-blue-500 hover:border-blue-700 ring-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500" />
+            <button formaction="{{ route('todo.add') }}" class="cursor-pointer ml-5 shadow-md rounded-md font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+            </button>
         </div>
         <ul class="w-4/5 m-auto">
             <li class="block py-3 border-b-2 border-gray-200 flex justify-between">
@@ -63,5 +67,6 @@
                 </svg>
             </li>
         </ul>
+        </form>
     </body>
 </html>
