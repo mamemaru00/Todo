@@ -13,6 +13,13 @@
             document.querySelector("#todo_form").action = "{{ route('todo.check') }}";
             document.querySelector("#todo_form").submit();
         }
+        
+        function deleteTodo(todoId) {
+            document.querySelector("#select_todo_id").value = todoId;
+
+            document.querySelector("#todo_form").action = "{{ route('todo.delete') }}";
+            document.querySelector("#todo_form").submit();
+        }
     </script>
 </head>
 
