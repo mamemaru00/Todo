@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/', [TodoController::class, 'index'])->name('todo.init');
 Route::post('/add', [TodoController::class, 'add'])->name('todo.add');
+Route::post('/check', [TodoController::class, 'check'])->name('todo.check');
